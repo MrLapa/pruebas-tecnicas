@@ -1,11 +1,16 @@
 /* eslint-disable react/prop-types */
 import classes from "./Categories.module.css";
 
-const Categories = ({ textLabel, onChange, data }) => {
+const Categories = ({ textLabel, onChange, data, defaultValue }) => {
   return (
     <div className={classes.wrapper}>
       <label htmlFor="categories">{textLabel}</label>
-      <select name="categories" id="categories" onChange={onChange}>
+      <select
+        name="categories"
+        id="categories"
+        onChange={onChange}
+        value={defaultValue}
+      >
         <option key="all" value="all">
           All
         </option>
