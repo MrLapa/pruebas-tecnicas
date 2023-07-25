@@ -21,7 +21,7 @@ const Filters = ({ defaultValues }) => {
   };
 
   const onChangeCategoriesHandler = (event) => {
-    setFilters((prevState) => ({ ...prevState, pages: event.target.value }));
+    setFilters((prevState) => ({ ...prevState, category: event.target.value }));
   };
 
   return (
