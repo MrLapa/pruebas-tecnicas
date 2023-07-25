@@ -16,8 +16,8 @@ const Filters = ({ defaultValues }) => {
 
   const [filters, setFilters] = React.useState({ pages, category });
 
-  const onChangeRangeHandler = (value) => {
-    setFilters((prevState) => ({ ...prevState, pages: value }));
+  const onChangeRangeHandler = (event) => {
+    setFilters((prevState) => ({ ...prevState, pages: event.target.value }));
   };
 
   const onChangeCategoriesHandler = (event) => {

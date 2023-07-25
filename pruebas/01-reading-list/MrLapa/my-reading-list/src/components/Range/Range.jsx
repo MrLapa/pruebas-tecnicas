@@ -8,7 +8,7 @@ const Range = ({ minPages, maxPages, onChange, currentValue, label }) => {
   const onChangeRangeHandler = (event) => {
     setRangeValue(event.target.value);
     if (onChange && typeof onChange === "function") {
-      onChange(event.target.value);
+      onChange(event);
     }
   };
 
