@@ -2,6 +2,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 9.375rem);
   gap: 20px 10px;
-  justify-items: center;
+  justify-content: center;
   height: fit-content;
+}
+
+@media (max-width: 30rem) {
+  .wrapper {
+    justify-content: space-around;
+  }
 }
