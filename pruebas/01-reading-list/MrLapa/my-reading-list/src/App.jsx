@@ -24,7 +24,10 @@ function App() {
     <main className={classes["main-wrapper"]}>
       <section className={classes["available-books"]}>
         <section className={classes["header-wrapper"]}>
-          <Header availableBooks={100} selectedBooks={7} />
+          <Header
+            availableBooks={filteredBooks.length}
+            selectedBooks={selectedBooks.length}
+          />
           <Filters />
         </section>
         <BooksList
