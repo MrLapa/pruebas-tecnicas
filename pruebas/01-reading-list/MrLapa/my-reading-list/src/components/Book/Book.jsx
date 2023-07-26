@@ -5,7 +5,7 @@ const Book = ({
   isCloseButtonVisible,
   isAddButtonVisible,
   onClickAddButton,
-  onClickCloseButton,
+  onClickRemoveButton,
   imgSource,
   imgText,
 }) => {
@@ -15,7 +15,7 @@ const Book = ({
         {isCloseButtonVisible && (
           <button
             className={classes["close-button"]}
-            onClick={onClickCloseButton}
+            onClick={onClickRemoveButton}
           >
             x
           </button>
