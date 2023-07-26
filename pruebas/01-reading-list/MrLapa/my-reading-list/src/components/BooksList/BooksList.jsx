@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import React from "react";
 import classes from "./BooksList.module.css";
 import Book from "../Book/Book";
 
@@ -20,8 +19,8 @@ const BooksList = ({
             imgText={title}
             isAddButtonVisible={isAddButtonEnabled}
             isCloseButtonVisible={isRemoveButtonEnabled}
-            onClickAddButton={onClickAddButton}
-            onClickRemoveButton={onClickRemoveButton}
+            onClickAddButton={() => onClickAddButton(ISBN)}
+            onClickRemoveButton={() => onClickRemoveButton(ISBN)}
           />
         ))}
     </section>
