@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import React from "react";
 import classes from "./Filters.module.css";
 import Range from "../Range/Range";
 import Categories from "../Categories/Categories";
@@ -11,25 +10,21 @@ const categoryOptions = [
   { value: "Terror", text: "Terror" },
 ];
 
-const Filters = ({ defaultValues }) => {
-  const { pages, category } = defaultValues;
-
-  const [filters, setFilters] = React.useState({ pages, category });
-
+const Filters = () => {
   const onChangeRangeHandler = (event) => {
-    setFilters((prevState) => ({ ...prevState, pages: event.target.value }));
+    console.log(event.target.value);
   };
 
   const onChangeCategoriesHandler = (event) => {
-    setFilters((prevState) => ({ ...prevState, category: event.target.value }));
+    console.log(event.target.value);
   };
 
   return (
     <section className={classes.wrapper}>
       <Range
-        min={100}
-        max={200}
-        currentValue={filters.pages}
+        minPages={1}
+        maxPages={1200}
+        currentValue={50}
         label={"Filter by pages"}
         onChange={onChangeRangeHandler}
       />
@@ -37,7 +32,7 @@ const Filters = ({ defaultValues }) => {
         data={categoryOptions}
         textLabel={"Filter by category"}
         onChange={onChangeCategoriesHandler}
-        defaultValue={filters.category}
+        defaultValue={"all"}
       />
     </section>
   );
