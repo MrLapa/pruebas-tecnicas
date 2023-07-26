@@ -2,6 +2,7 @@
 import classes from "./Filters.module.css";
 import Range from "../Range/Range";
 import Categories from "../Categories/Categories";
+import useFilters from "../../hooks/useFilters";
 
 const categoryOptions = [
   { value: "Fantasía", text: "Fantasía" },
@@ -11,20 +12,23 @@ const categoryOptions = [
 ];
 
 const Filters = () => {
+  const { filters, maxPages, setFilters } = useFilters();
+  const { pages, category } = filters;
+
   const onChangeRangeHandler = (event) => {
-    console.log(event.target.value);
+    setFilters({ pages: event.target.value });
   };
 
   const onChangeCategoriesHandler = (event) => {
-    console.log(event.target.value);
+    setFilters({ category: event.target.value });
   };
 
   return (
     <section className={classes.wrapper}>
       <Range
         minPages={1}
-        maxPages={1200}
-        currentValue={50}
+        maxPages={maxPages}
+        currentValue={pages || maxPages}
         label={"Filter by pages"}
         onChange={onChangeRangeHandler}
       />
@@ -32,7 +36,7 @@ const Filters = () => {
         data={categoryOptions}
         textLabel={"Filter by category"}
         onChange={onChangeCategoriesHandler}
-        defaultValue={"all"}
+        defaultValue={category}
       />
     </section>
   );
