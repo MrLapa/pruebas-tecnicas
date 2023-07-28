@@ -12,6 +12,7 @@ const useFilters = () => {
   const setFilters = ({ pages = pagesFilter, category = categoryFilter }) => {
     setContextFilters((prevState) => ({ ...prevState, pages, category }));
   };
+
   useEffect(() => {
     setContextFilters((prevState) => ({ ...prevState, pages: maxPages }));
   }, [maxPages, setContextFilters]);

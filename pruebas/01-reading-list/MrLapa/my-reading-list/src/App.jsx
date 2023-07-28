@@ -8,16 +8,16 @@ import useBooks from "./hooks/useBooks";
 import useFilters from "./hooks/useFilters";
 
 function App() {
-  const { selectedBooks, addBookToReadingList, removeBookFromReadingList } =
+  const { selectedBooks, addToSelectedBooks, removeFromSelectedBooks } =
     useBooks();
   const { filteredBooks } = useFilters();
 
   const onClickAddButtonHandler = (ISBN) => {
-    addBookToReadingList(ISBN);
+    addToSelectedBooks(ISBN);
   };
 
   const onClickRemoveButtonHandler = (ISBN) => {
-    removeBookFromReadingList(ISBN);
+    removeFromSelectedBooks(ISBN);
   };
 
   return (
